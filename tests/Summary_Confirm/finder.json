@@ -1,0 +1,18 @@
+{
+  "tabs": {
+    "sellCrypto": { "role": "tab", "name": "Sell Crypto" }
+  },
+  "dropdown": {
+    "currencyFrom": { "selector": "div", "hasText": "^VND$", "nth": 1 },
+    "currencyTo": { "selector": "div", "hasText": "^United States-USD$", "first": true },
+    "cryptoFrom": { "selector": "div", "hasText": "^BTC$", "nth": 1 },
+
+    "cryptoToADA": { "role": "heading", "name": "ADA" },
+    "cryptoToALGO": { "role": "heading", "name": "ALGO" },
+    "cryptoADA": { "role": "heading", "name": "ADA" }
+  },
+  "buttons": {
+    "estimatedValue": { "text": "Estimated Value" },
+    "continue": { "selector": ".css-brhafc" }
+  }
+}

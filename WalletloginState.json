@@ -1,0 +1,42 @@
+{
+  "cookies": [
+    {
+      "name": "vercel-experiment-uuid",
+      "value": "QQoUEMm9MjSnuas2GbV99",
+      "domain": "vercel.live",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://sandbox-buy.transfi.com",
+      "localStorage": [
+        {
+          "name": "userData",
+          "value": "{\"country\":\"IN\"}"
+        },
+        {
+          "name": "auth-tokens-production",
+          "value": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTY5MjAwMDQsImV4cCI6MTc1NzAwNjQwNH0.rkGz3sE3XEeeaHBSu4EkT9fWcuOjIhVHvjZxq5FB7uI\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTY5MjAwMDQsImV4cCI6MTc1NzAwNjQwNH0.y3k_b3FvRcpfH1DnAPKS8fycfvB_ta-pubYYdqDCllI\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://vercel.live",
+      "localStorage": [
+        {
+          "name": "vid-https://sandbox-buy.transfi.com",
+          "value": "\"17556021387590.1507497552621484\""
+        },
+        {
+          "name": "vercel-toolbar-experiment-uuid-https://sandbox-buy.transfi.com",
+          "value": "\"QQoUEMm9MjSnuas2GbV99\""
+        }
+      ]
+    }
+  ]
+}

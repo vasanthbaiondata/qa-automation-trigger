@@ -1,0 +1,7 @@
+{
+  "amountInput": { "role": "spinbutton", "name": "I want to Pay" },
+  "buyBtn": { "role": "button", "name": "Buy BTC" },
+  "walletInput": { "role": "textbox", "name": "Wallet address" },
+  "submitWallet": { "role": "button", "name": "Continue" },
+  "invalidWalletError": "Sorry, you have entered an invalid wallet address"
+}

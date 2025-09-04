@@ -1,0 +1,27 @@
+{
+  "fields": {
+    "email": { "role": "textbox", "name": "Email" },
+    "firstName": "input[placeholder='Enter your first name here']",
+    "lastName": "input[placeholder='Enter your last name here']",
+    "dob": { "role": "textbox", "name": "YYYY-MM-DD" },
+    "country": "Country*"
+  },
+  "buttons": {
+    "continue": { "role": "button", "name": "Continue" },
+    "signUp": { "role": "button", "name": "Sign up" },
+    "signIn": { "role": "button", "name": "Sign In" }
+  },
+  "navigation": {
+    "menuIcon": { "role": "navigation" }
+  },
+ "errors": {
+  "firstName": "#field-1-feedback",
+  "lastName": "#field-2-feedback",
+  "dobRequired": "div.text-red-600.text-sm",
+  "country": "please select your country",
+  "dobUnder18": "text=You must be at least 18",
+   "dobAbove70": "text=Maximum age limit is 70"
+ 
+}
+
+}

@@ -1,0 +1,15 @@
+{
+  "tabs": {
+    "sellCrypto": { "role": "tab", "name": "Sell Crypto" }
+  },
+  "fields": {
+    "amountInput": { "role": "spinbutton", "name": "I want to Sell" }
+  },
+  "buttons": {
+    "sellBTC": { "role": "button", "name": "sell BTC" }
+  },
+  "messages": {
+    "minOrder": "text=The minimum order value",
+    "maxOrder": "text=The maximum order value"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "buy": {
+    "amountInput": { "role": "spinbutton", "name": "I want to Pay" },
+    "buyBtn": { "role": "button", "name": "Buy BTC" },
+    "walletInput": { "role": "textbox", "name": "Wallet address" },
+    "submitWallet": { "role": "button", "name": "Continue" },
+    "momoImg": "main >> text=momo",
+    "continueBtn": { "role": "button", "name": "Continue" },
+    "phoneInput": { "role": "textbox", "name": "phone number" },
+    "confirmBtn": { "role": "button", "name": "Confirm" }
+  },
+  "sell": {
+    "sellTab": { "role": "tab", "name": "Sell Crypto" },
+    "sellBtn": { "role": "button", "name": "Sell BTC" },
+    "continueBtn": { "role": "button", "name": "Continue" },
+    "confirmOrderBtn": "button:has-text(\"Confirm Order\")"
+  }
+}

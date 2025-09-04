@@ -1,0 +1,50 @@
+{
+  "fields": {
+    "amountToPay": { "role": "spinbutton", "name": "I want to Pay" }
+  },
+  "dropdowns": {
+    "fiatSelected": "div[role='button'] >> nth=0",
+    "fiatOption": "div[role='option']:has-text(\"__CURRENCY__\")",
+    "cryptoSelected": "div[role='button'] >> nth=1",
+    "cryptoOption": "div[role='option']:has-text(\"__CRYPTO__\")",
+    "fiatSelect": "div[role='button']",
+    "fiatOptionGeneric": "div[role='option']"
+  },
+  "labels": {
+    "estimatedValue": "Estimated Value"
+  },
+  "buttons": {
+    "buy": { "role": "button", "name": "Buy BTC" },
+    "summaryDynamic": { "role": "button", "name": "You get ~.*__CRYPTO__" },
+    "confirm": { "role": "button", "name": "Confirm" }
+  },
+  "messages": {
+    "minOrder": "text=The minimum order value",
+    "maxOrder": "#field-2-feedback"
+  },
+  "tabs": {
+    "sellCrypto": { "role": "tab", "name": "Sell Crypto" }
+  },
+  "currencies": {
+    "vnd": { "text": "VND", "nth": 2 },
+    "eurMembers": { "text": "Euro Members-EUR", "nth": 0 },
+    "eur": { "text": "EUR", "nth": 1 },
+    "thailandTHB": { "text": "Thailand-THB", "nth": 0 },
+    "thb": { "text": "THB", "nth": 2 },
+    "vietnamVND": { "text": "Vietnam-VND", "nth": 0 },
+    "php": { "text": "PHP", "nth": 1 },
+    "andorraEUR": { "text": "Andorra-EUR", "nth": 0 },
+    "austriaEUR": { "text": "Austria-EUR", "nth": 0 }
+  },
+  "cryptos": {
+    "btc": { "text": "BTC", "nth": 0 },
+    "algo": { "text": "ALGO - ( Algorand )", "nth": 0 },
+    "aave": { "text": "AAVE", "nth": 1 },
+    "ada": { "text": "ADA - ( Cardano )", "nth": 0 },
+    "adaShort": { "text": "ADA", "nth": 1 }
+  },
+  "spinButton": { "role": "spinbutton", "name": "I want to Pay" },
+  "estimatedValue": { "text": "Estimated Value" },
+  "estimatedValueButton": { "role": "button", "nameRegex": "You get ~.*" },
+  "buyButton": { "role": "button", "name": "Buy BTC" }
+}

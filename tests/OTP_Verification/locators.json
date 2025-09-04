@@ -1,0 +1,9 @@
+{
+  "navigationMenuIcon": "role=navigation >> role=img",
+  "signInButton": "role=button[name='Sign In']",
+  "emailInput": "role=textbox[name='Email']",
+  "continueButton": "role=button[name='Continue']",
+  "otpInputs": "input[id^='pin-input-1-']",
+  "toastMessage": "#chakra-toast-manager-bottom",
+  "buyBTCButton": "role=button[name='Buy BTC']"
+}
