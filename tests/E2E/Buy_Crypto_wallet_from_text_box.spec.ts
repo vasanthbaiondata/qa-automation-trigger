@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import locators from './locators.json';
-import { testData } from './testData';
+import locators from '../../locators/locators.json';
+import { testData } from '../../data/testData';
 import fs from 'fs';
 import path from 'path';
 

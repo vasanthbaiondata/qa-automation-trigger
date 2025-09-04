@@ -1,19 +1,87 @@
 {
-  "sandbox_url": "https://sandbox-buy.transfi.com/?apiKey=m4P91ifvL9NLCxQceZ",
-  "sandbox_url_with_wallet": "https://sandbox-buy.transfi.com/?apiKey=m4P91ifvL9NLCxQceZ&walletAddress=3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
-  "currency_vnd": { "text": "^VND$", "nth": 2 },
-  "currency_euro": { "text": "^Euro Members-EUR$", "nth": 0 },
-  "pay_amount": { "role": "spinbutton", "name": "I want to Pay" },
-  "buy_btc": { "role": "button", "name": "Buy BTC" },
-  "wallet_address": { "role": "textbox", "name": "Wallet address" },
-  "continue": { "role": "button", "name": "Continue" },
-  "confirm": { "role": "button", "name": "Confirm" },
-  "proceed_to_pay": { "role": "button", "name": "Proceed to pay" },
-  "order_details": { "role": "button", "name": "Order Details" },
-  "sepa_instant": "Open Banking",
-  "sell_crypto_tab": { "role": "tab", "name": "Sell Crypto" },
-  "sell_btc": { "role": "button", "name": "Sell BTC" },
-  "confirm_order": { "role": "button", "name": "Confirm Order" },
-  "view_order": { "role": "button", "name": "View Order" },
-  "wallet_address_value": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"
+  "currencyDropdown": {
+    "role": "group",
+    "hasText": "I want to PayVND",
+    "child": "svg"
+  },
+  "cryptoDropdown": {
+    "role": "group",
+    "hasText": "You Get (Estimate)",
+    "child": "svg"
+  },
+  "payInput": {
+    "role": "spinbutton",
+    "name": "I want to Pay"
+  },
+  "cryptoBTC": { "tag": "div", "hasText": "BTC", "index": 1 },
+  "buyBCHButton": {
+    "role": "button",
+    "name": "Buy USDC"
+  },
+  "walletInput": {
+    "role": "textbox",
+    "name": "Wallet address"
+  },
+  "continue_button": {
+    "role": "button",
+    "name": "Continue"
+  },
+  "sepa_instant": {
+    "text": "Open Banking"
+  },
+  "confirm_button": {
+    "role": "button",
+    "name": "Confirm"
+  },
+  "proceedToPayButton": {
+    "role": "button",
+    "name": "Proceed to pay"
+  },
+  "orderDetailsButton": {
+    "role": "button",
+    "name": "Order Details"
+  },
+  "insert_args": [           
+    {
+      "pay_cur": "Austria-EUR",
+      "buy_cur": "AAVE - ( Ethereum )",
+      "amount": "100",
+      "buy_button": "Buy AAVE",
+      "wallet_address": "0x79C80A2D8800D3D709DDa56Abd4F106F7fee1fd4",
+      "payment_method": "Google Pay",
+      "phone_number": "9876543210"
+    },
+    {
+      "pay_cur": "Andorra-EUR",
+      "buy_cur": "BTC - ( Bitcoin )",
+      "amount": "500",
+      "buy_button": "Buy BTC",
+      "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "payment_method": "Google Pay"
+    },
+    {
+      "pay_cur": "Belgium-EUR",
+      "buy_cur": "BCH - ( Bitcoin_Cash )",
+      "amount": "500",
+      "buy_button": "Buy BCH",
+      "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "payment_method": "Google Pay"
+    },
+    {
+      "pay_cur": "Bulgaria-EUR",
+      "buy_cur": "USDC - ( Fuse )",
+      "amount": "500",
+      "buy_button": "Buy USDC",
+      "wallet_address": "0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2",
+      "payment_method": "Google Pay"
+    },
+    {
+      "pay_cur": "Colombia-COP",
+      "buy_cur": "USDT - ( Avalanche )",
+      "amount": "500",
+      "buy_button": "Buy USDT",
+      "wallet_address": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
+      "payment_method": "Google Pay"
+    }
+  ]
 }
