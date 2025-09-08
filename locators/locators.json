@@ -41,47 +41,28 @@
     "role": "button",
     "name": "Order Details"
   },
+  "phoneInput": {
+    "role": "textbox",
+    "name": "Phone number"
+  },
   "insert_args": [           
     {
-      "pay_cur": "Austria-EUR",
+      "pay_cur": "United States-USD",
       "buy_cur": "AAVE - ( Ethereum )",
       "amount": "100",
       "buy_button": "Buy AAVE",
       "wallet_address": "0x79C80A2D8800D3D709DDa56Abd4F106F7fee1fd4",
-      "payment_method": "Google Pay",
+      "payment_method": "ACH",
       "phone_number": "9876543210"
     },
     {
-      "pay_cur": "Andorra-EUR",
+      "pay_cur": "Vietnam-VND",
       "buy_cur": "BTC - ( Bitcoin )",
-      "amount": "500",
+      "amount": "10099945",
       "buy_button": "Buy BTC",
       "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
-      "payment_method": "Google Pay"
-    },
-    {
-      "pay_cur": "Belgium-EUR",
-      "buy_cur": "BCH - ( Bitcoin_Cash )",
-      "amount": "500",
-      "buy_button": "Buy BCH",
-      "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
-      "payment_method": "Google Pay"
-    },
-    {
-      "pay_cur": "Bulgaria-EUR",
-      "buy_cur": "USDC - ( Fuse )",
-      "amount": "500",
-      "buy_button": "Buy USDC",
-      "wallet_address": "0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2",
-      "payment_method": "Google Pay"
-    },
-    {
-      "pay_cur": "Colombia-COP",
-      "buy_cur": "USDT - ( Avalanche )",
-      "amount": "500",
-      "buy_button": "Buy USDT",
-      "wallet_address": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
-      "payment_method": "Google Pay"
+      "payment_method": "Mobile Money",
+      "phone_number": "9876543210"
     }
   ]
 }

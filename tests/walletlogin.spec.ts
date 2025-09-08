@@ -4,7 +4,7 @@ import { getLatestOtpFromEmail } from '../readEmails';
 
 dotenv.config();
 
-const baseURL = 'https://sandbox-buy.transfi.com/?apiKey=VcnAWk1BIQSfiJo6&walletAddress=3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy';
+const baseURL = 'https://sandbox-buy.transfi.com/?apiKey=m4P91ifvL9NLCxQceZ&walletAddress=3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy';
 
 test.setTimeout(3600000); // 60 mins timeout
 
