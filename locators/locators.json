@@ -2,7 +2,12 @@
   "currencyDropdown": {
     "role": "group",
     "hasText": "I want to PayVND",
+    "hasTextsell": "I want to SellBTC",
     "child": "svg"
+  },
+  "sellcrypto" : {
+    "role": "tab",
+    "name": "Sell Crypto"
   },
   "cryptoDropdown": {
     "role": "group",
@@ -11,7 +16,8 @@
   },
   "payInput": {
     "role": "spinbutton",
-    "name": "I want to Pay"
+    "name": "I want to Pay",
+    "namesell": "I want to Sell"
   },
   "cryptoBTC": { "tag": "div", "hasText": "BTC", "index": 1 },
   "buyBCHButton": {
@@ -49,7 +55,7 @@
     {
       "pay_cur": "United States-USD",
       "buy_cur": "AAVE - ( Ethereum )",
-      "amount": "100",
+      "amount": "105",
       "buy_button": "Buy AAVE",
       "wallet_address": "0x79C80A2D8800D3D709DDa56Abd4F106F7fee1fd4",
       "payment_method": "ACH",
@@ -63,6 +69,51 @@
       "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
       "payment_method": "Mobile Money",
       "phone_number": "9876543210"
+    },
+    {
+      "pay_cur": "Euro Members-EUR",
+      "buy_cur": "BCH - ( Bitcoin_Cash )",
+      "amount": "100",
+      "buy_button": "Buy BCH",
+      "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "payment_method": "Open Banking",
+      "phone_number": "9876543210"
+    },
+    {
+      "pay_cur": "United Kingdom-GBP",
+      "buy_cur": "USDC - ( Fuse )",
+      "amount": "100",
+      "buy_button": "Buy USDC",
+      "wallet_address": "0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2",
+      "payment_method": "Faster Payments",
+      "phone_number": "9876543210"
+    },
+    {
+      "pay_cur": "Andorra-USD",
+      "buy_cur": "AVAX - ( Avalanche )",
+      "amount": "105",
+      "buy_button": "Buy AVAX",
+      "wallet_address": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
+      "payment_method": "ACH",
+      "phone_number": "9876543210"
     }
+  ],
+  "sell_args": [ 
+    {
+      "sell_cur": "BTC",
+      "sell_curr": "Australia-AUD",
+      "amount": "50",
+      "buy_button": "Sell BTC",
+      "wallet_address": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
+      "payment_method": "sepa_Bank"
+    },
+    {
+      "sell_cur": "BCH",
+      "sell_curr": "Andorra-EUR",
+      "amount": "2",
+      "buy_button": "Sell BCH",
+      "wallet_address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "payment_method": "sepa_Bank"
+    },
   ]
 }
