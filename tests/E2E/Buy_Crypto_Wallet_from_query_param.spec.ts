@@ -6,7 +6,7 @@ import path from 'path';
 
 test.use({ storageState: 'WalletloginState.json' });
 
-for (const args of locators.insert_args) {
+for (const args of locators.buy_args) {
   test(`Positive: End-to-End Automation - BUY_CRYPTO ${args.pay_cur} → ${args.buy_cur}`, async ({ page }, testInfo) => {
 
     // Setup: per-test report/screenshots directory
@@ -20,7 +20,7 @@ for (const args of locators.insert_args) {
       const filePath = path.join(screenshotsDir, `${stepName}.png`);
       const shot = await page.screenshot({ path: filePath, fullPage: true });
       await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-      console.log(`📸 Screenshot saved: ${filePath}`);
+      console.log(` Screenshot saved: ${filePath}`);
     }
 
 
@@ -28,7 +28,7 @@ for (const args of locators.insert_args) {
       async function clickContinue(stepName: string) {
       const btn = page.getByRole(locators.continue_button.role, { name: locators.continue_button.name });
       await btn.click();
-      console.log(`✅ Continue clicked (${stepName})`);
+      console.log(` Continue clicked (${stepName})`);
       await takeScreenshot(`continue_${stepName}`);
     }
 
@@ -45,7 +45,7 @@ for (const args of locators.insert_args) {
       }
     }
     await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 120000 });
-    console.log(`✅ Navigated to sandbox${args.wallet_address ? ` with wallet: ${args.wallet_address}` : ''}`);
+    console.log(` Navigated to sandbox${args.wallet_address ? ` with wallet: ${args.wallet_address}` : ''}`);
     await takeScreenshot('step1_home');
 
     
@@ -57,14 +57,14 @@ for (const args of locators.insert_args) {
 
     const payCurOption = page.getByRole('listitem').filter({ hasText: args.pay_cur });
     await payCurOption.click();
-    console.log(`✅ Currency selected: ${args.pay_cur}`);
+    console.log(` Currency selected: ${args.pay_cur}`);
     await takeScreenshot('step2_currency_selected');
 
     // Step 3: Enter amount
  
     const payInput = page.getByRole(locators.payInput.role, { name: locators.payInput.name });
     await payInput.fill(args.amount);
-    console.log(`✅ Pay amount entered: ${args.amount}`);
+    console.log(` Pay amount entered: ${args.amount}`);
     await takeScreenshot('step3_amount_filled');
 
     // Step 4: Select Crypto from dropdown
@@ -75,7 +75,7 @@ for (const args of locators.insert_args) {
 
     const buycurOption = page.getByRole('listitem').filter({ hasText: args.buy_cur });
     await buycurOption.click();
-    console.log(`✅ Step 4: Crypto selected: ${args.buy_cur}`);
+    console.log(` Step 4: Crypto selected: ${args.buy_cur}`);
     await takeScreenshot('step4_crypto_selected');
 
     
@@ -84,7 +84,7 @@ for (const args of locators.insert_args) {
     await buy_buttonOption.waitFor({ state: 'visible', timeout: 15000 });
     await buy_buttonOption.scrollIntoViewIfNeeded();
     await buy_buttonOption.click();
-    console.log(`✅ Step 5: ${args.buy_button} clicked`);
+    console.log(` Step 5: ${args.buy_button} clicked`);
     await takeScreenshot('step5_buy_button_clicked');
 
     // ─────────────────────────────────────────────────────────────
@@ -93,7 +93,7 @@ for (const args of locators.insert_args) {
     /* Uncomment if wallet input step is required
     const walletInput = page.getByRole(locators.walletInput.role as any, { name: locators.walletInput.name });
     await walletInput.fill(args.wallet_address);
-    console.log(`✅ Step 6: Wallet address entered: ${args.wallet_address}`);
+    console.log(` Step 6: Wallet address entered: ${args.wallet_address}`);
     await takeScreenshot('step6_wallet_filled');
     await clickContinue('step7');
     */
@@ -105,7 +105,7 @@ for (const args of locators.insert_args) {
     await paymentOption.waitFor({ state: 'visible', timeout: 10000 });
     await paymentOption.scrollIntoViewIfNeeded();
     await paymentOption.click({ timeout: 15000 });
-    console.log(`✅ Step 8: Payment method selected: ${args.payment_method}`);
+    console.log(` Step 8: Payment method selected: ${args.payment_method}`);
     await takeScreenshot('step8_payment_selected');
 
     
@@ -121,15 +121,15 @@ for (const args of locators.insert_args) {
       const phoneLocator = page.getByRole(locators.phoneInput.role as any, { name: locators.phoneInput.name });
       if (await phoneLocator.count() > 0) {
         await phoneLocator.fill(args.phone_number);
-        console.log(`✅ Step 10: Phone number entered: ${args.phone_number}`);
+        console.log(` Step 10: Phone number entered: ${args.phone_number}`);
         await takeScreenshot('step10_phone_filled');
 
         await clickContinue('after_phone');
       } else {
-        console.log('⚠️ Phone input not found on this flow, skipping step.');
+        console.log(' Phone input not found on this flow, skipping step.');
       }
     } else {
-      console.log('⚠️ phoneInput locator not defined or phone number missing, skipping step.');
+      console.log(' phoneInput locator not defined or phone number missing, skipping step.');
     }
 
     
@@ -137,7 +137,7 @@ for (const args of locators.insert_args) {
     
     const confirmBtn = page.getByRole(locators.confirm_button.role, { name: locators.confirm_button.name });
     await confirmBtn.click();
-    console.log('✅ Step 12: Confirm clicked');
+    console.log(' Step 12: Confirm clicked');
     await takeScreenshot('step12_confirm');
 
        // Step 13: Proceed to Pay
@@ -145,14 +145,14 @@ for (const args of locators.insert_args) {
     await page.waitForTimeout(3000);
     const proceedBtn = page.getByRole(locators.proceedToPayButton.role, { name: locators.proceedToPayButton.name });
     await proceedBtn.click();
-    console.log('✅ Step 13: Proceed to Pay clicked');
+    console.log(' Step 13: Proceed to Pay clicked');
     await takeScreenshot('step13_proceed_to_pay');
 
     
     // Step 14: Order Details
     const orderDetailsBtn = page.getByRole(locators.orderDetailsButton.role, { name: locators.orderDetailsButton.name });
     await orderDetailsBtn.click();
-    console.log('✅ Step 14: Order Details clicked');
+    console.log(' Step 14: Order Details clicked');
     await takeScreenshot('step14_order_details');
 
   });

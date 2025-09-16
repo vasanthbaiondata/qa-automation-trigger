@@ -59,7 +59,7 @@
     "role": "textbox",
     "name": "Phone number"
   },
-  "insert_args": [           
+  "buy_args": [           
     {
       "pay_cur": "United States-USD",
       "buy_cur": "AAVE - ( Ethereum )",
