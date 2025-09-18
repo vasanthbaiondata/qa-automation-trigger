@@ -34,9 +34,9 @@ export class CryptoTradingPage extends BasePage {
       await this.safeClick(toCurrencyLocator);
 
       await this.takeScreenshot('currency_selection');
-      console.log(`✅ Currency pair selected: ${fromCurrency} → ${toCurrency}`);
+      console.log(` Currency pair selected: ${fromCurrency} → ${toCurrency}`);
     } catch (error) {
-      console.error(`❌ Failed to select currency pair: ${error}`);
+      console.error(` Failed to select currency pair: ${error}`);
       throw error;
     }
   }
@@ -52,9 +52,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeFill(amountInput, amount);
       await this.takeScreenshot('amount_entered');
-      console.log(`✅ Amount entered: ${amount}`);
+      console.log(` Amount entered: ${amount}`);
     } catch (error) {
-      console.error(`❌ Failed to enter amount: ${error}`);
+      console.error(` Failed to enter amount: ${error}`);
       throw error;
     }
   }
@@ -70,9 +70,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(buyBtn);
       await this.takeScreenshot('buy_crypto_clicked');
-      console.log('✅ Buy crypto button clicked');
+      console.log(' Buy crypto button clicked');
     } catch (error) {
-      console.error(`❌ Failed to click buy crypto: ${error}`);
+      console.error(` Failed to click buy crypto: ${error}`);
       throw error;
     }
   }
@@ -96,9 +96,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(continueBtn);
       await this.takeScreenshot('wallet_address_submitted');
-      console.log('✅ Wallet address submitted');
+      console.log(' Wallet address submitted');
     } catch (error) {
-      console.error(`❌ Failed to enter wallet address: ${error}`);
+      console.error(` Failed to enter wallet address: ${error}`);
       throw error;
     }
   }
@@ -119,12 +119,12 @@ export class CryptoTradingPage extends BasePage {
       if (paymentLocator) {
         await this.safeClick(paymentLocator, { timeout: 60000 });
         await this.takeScreenshot('payment_method_selected');
-        console.log(`✅ Payment method selected: ${method}`);
+        console.log(` Payment method selected: ${method}`);
       } else {
         throw new Error(`Payment method ${method} not supported`);
       }
     } catch (error) {
-      console.error(`❌ Failed to select payment method: ${error}`);
+      console.error(` Failed to select payment method: ${error}`);
       throw error;
     }
   }
@@ -140,9 +140,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(continueBtn);
       await this.takeScreenshot(`${stepName}_clicked`);
-      console.log(`✅ ${stepName} clicked`);
+      console.log(` ${stepName} clicked`);
     } catch (error) {
-      console.error(`❌ Failed to click ${stepName}: ${error}`);
+      console.error(` Failed to click ${stepName}: ${error}`);
       throw error;
     }
   }
@@ -161,9 +161,9 @@ export class CryptoTradingPage extends BasePage {
       await this.page.waitForTimeout(2000);
 
       await this.takeScreenshot('phone_confirmed');
-      console.log('✅ Phone confirmation completed');
+      console.log(' Phone confirmation completed');
     } catch (error) {
-      console.error(`❌ Failed to confirm phone: ${error}`);
+      console.error(` Failed to confirm phone: ${error}`);
       throw error;
     }
   }
@@ -191,7 +191,7 @@ export class CryptoTradingPage extends BasePage {
         try {
           await proceedBtn.click({ timeout: 5000 });
           clicked = true;
-          console.log(`✅ Proceed to Pay clicked (attempt ${attempt})`);
+          console.log(` Proceed to Pay clicked (attempt ${attempt})`);
           break;
         } catch (err) {
           console.warn(`⚠️ Attempt ${attempt} to click Proceed to Pay failed`, err);
@@ -209,9 +209,9 @@ export class CryptoTradingPage extends BasePage {
       ]);
 
       await this.takeScreenshot('proceed_to_payment');
-      console.log('✅ Proceeded to payment successfully');
+      console.log(' Proceeded to payment successfully');
     } catch (error) {
-      console.error(`❌ Failed to proceed to payment: ${error}`);
+      console.error(` Failed to proceed to payment: ${error}`);
       throw error;
     }
   }
@@ -227,9 +227,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(orderDetailsBtn);
       await this.takeScreenshot('order_details_opened');
-      console.log('✅ Order details opened');
+      console.log(' Order details opened');
     } catch (error) {
-      console.error(`❌ Failed to open order details: ${error}`);
+      console.error(` Failed to open order details: ${error}`);
       throw error;
     }
   }
@@ -265,9 +265,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(sellTab);
       await this.takeScreenshot('sell_crypto_tab_selected');
-      console.log('✅ Sell Crypto tab selected');
+      console.log(' Sell Crypto tab selected');
     } catch (error) {
-      console.error(`❌ Failed to select sell crypto tab: ${error}`);
+      console.error(` Failed to select sell crypto tab: ${error}`);
       throw error;
     }
   }
@@ -283,9 +283,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(sellBtn);
       await this.takeScreenshot('sell_crypto_clicked');
-      console.log('✅ Sell crypto button clicked');
+      console.log(' Sell crypto button clicked');
     } catch (error) {
-      console.error(`❌ Failed to click sell crypto: ${error}`);
+      console.error(` Failed to click sell crypto: ${error}`);
       throw error;
     }
   }
@@ -301,9 +301,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(confirmOrderBtn);
       await this.takeScreenshot('order_confirmed');
-      console.log('✅ Order confirmed');
+      console.log(' Order confirmed');
     } catch (error) {
-      console.error(`❌ Failed to confirm order: ${error}`);
+      console.error(` Failed to confirm order: ${error}`);
       throw error;
     }
   }
@@ -319,9 +319,9 @@ export class CryptoTradingPage extends BasePage {
 
       await this.safeClick(viewOrderBtn);
       await this.takeScreenshot('order_viewed');
-      console.log('✅ Order viewed');
+      console.log(' Order viewed');
     } catch (error) {
-      console.error(`❌ Failed to view order: ${error}`);
+      console.error(` Failed to view order: ${error}`);
       throw error;
     }
   }

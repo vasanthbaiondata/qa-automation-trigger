@@ -34,7 +34,7 @@ export class BasePage {
       contentType: 'image/png' 
     });
     
-    console.log(`📸 ${stepName} screenshot saved at: ${filePath}`);
+    console.log(` ${stepName} screenshot saved at: ${filePath}`);
   }
 
   /**
@@ -49,7 +49,7 @@ export class BasePage {
       return true;
     } catch (error) {
       await this.takeScreenshot(`error_${Date.now()}`);
-      console.error(`❌ Element not found: ${error}`);
+      console.error(` Element not found: ${error}`);
       throw error;
     }
   }
@@ -97,7 +97,7 @@ export class BasePage {
         throw new Error(`Value mismatch. Expected: ${value}, Actual: ${actualValue}`);
       }
       
-      console.log(`✅ Successfully filled field with: ${value}`);
+      console.log(` Successfully filled field with: ${value}`);
     } catch (error) {
       await this.takeScreenshot(`fill_error_${Date.now()}`);
       throw error;
@@ -115,7 +115,7 @@ export class BasePage {
         await this.page.waitForSelector(waitForSelector, { timeout: 30000 });
       }
       
-      console.log(`✅ Successfully navigated to: ${url}`);
+      console.log(` Successfully navigated to: ${url}`);
     } catch (error) {
       await this.takeScreenshot(`navigation_error_${Date.now()}`);
       throw error;

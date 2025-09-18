@@ -32,8 +32,8 @@ export class TestUtils {
   static logStep(stepNumber: number, description: string, status: 'START' | 'SUCCESS' | 'FAILED' = 'START') {
     const icons = {
       START: '🔄',
-      SUCCESS: '✅',
-      FAILED: '❌'
+      SUCCESS: '',
+      FAILED: ''
     };
     
     const timestamp = new Date().toISOString();
@@ -65,13 +65,13 @@ export class TestUtils {
       try {
         console.log(`🔄 Attempting ${description} (attempt ${attempt}/${maxRetries})`);
         const result = await operation();
-        console.log(`✅ ${description} succeeded on attempt ${attempt}`);
+        console.log(` ${description} succeeded on attempt ${attempt}`);
         return result;
       } catch (error) {
         console.warn(`⚠️ ${description} failed on attempt ${attempt}: ${error}`);
         
         if (attempt === maxRetries) {
-          console.error(`❌ ${description} failed after ${maxRetries} attempts`);
+          console.error(` ${description} failed after ${maxRetries} attempts`);
           throw error;
         }
         

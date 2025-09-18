@@ -21,26 +21,26 @@ test('Positive : Page redirects to Payment Method (TC-INPUT-001)', async ({ page
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // Step 1: Go to sandbox
   await page.goto(testData.baseURL);
-  console.log('✅ Redirected to sandbox');
+  console.log(' Redirected to sandbox');
   await takeScreenshot('step1_sandbox');
 
   // Step 2: Enter amount
   const amountInput = page.getByRole(locators.amountInput.role, { name: locators.amountInput.name });
   await expect(amountInput).toBeVisible();
   await amountInput.fill(testData.amount);
-  console.log('✅ Amount entered');
+  console.log(' Amount entered');
   await takeScreenshot('step2_amount');
 
   // Step 3: Click Buy BTC
   const buyBtn = page.getByRole(locators.buyBtn.role, { name: locators.buyBtn.name });
   await expect(buyBtn).toBeEnabled();
   await buyBtn.click();
-  console.log('✅ Buy BTC clicked');
+  console.log(' Buy BTC clicked');
   await takeScreenshot('step3_buy_btn');
 
   // Step 4: Wallet section
@@ -51,7 +51,7 @@ test('Positive : Page redirects to Payment Method (TC-INPUT-001)', async ({ page
 
   const submitWallet = page.getByRole(locators.submitWallet.role, { name: locators.submitWallet.name });
   await submitWallet.click();
-  console.log('✅ Wallet Address added');
+  console.log(' Wallet Address added');
   await takeScreenshot('step5_submit_wallet');
 
   // Step 5: Optional wait

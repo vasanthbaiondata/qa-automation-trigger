@@ -20,12 +20,12 @@ test('Negative : Rejects incorrect OTP and shows error message (TC-OTP-002)', as
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // 1️⃣ Go to Sandbox/Login page
   await page.goto(testData.baseURLSandbox);
-  console.log('✅ Redirected to home page');
+  console.log(' Redirected to home page');
   await takeScreenshot('step1_home');
 
   // 2️⃣ Open navigation menu
@@ -71,17 +71,17 @@ test('Negative : Rejects incorrect OTP and shows error message (TC-OTP-002)', as
   for (let i = 0; i < 6; i++) {
     await otpInputs.nth(i).fill(wrongOtp[i]);
   }
-  console.log('❌ Wrong OTP entered');
+  console.log(' Wrong OTP entered');
   await takeScreenshot('step7_wrong_otp');
 
   // 8️⃣ Expect error/toast message
   const toast = page.locator(locators.toastMessage);
   await expect(toast).toContainText(/incorrect verification code/i, { timeout: 10000 });
-  console.log('✅ Incorrect OTP message verified');
+  console.log(' Incorrect OTP message verified');
   await takeScreenshot('step8_toast_error');
 
   // 9️⃣ Verify user stays on OTP page
   await expect(page.locator(locators.otpInputs).first()).toBeVisible();
-  console.log('✅ User did NOT navigate to Wallet page as expected');
+  console.log(' User did NOT navigate to Wallet page as expected');
   await takeScreenshot('step9_still_on_otp_page');
 });

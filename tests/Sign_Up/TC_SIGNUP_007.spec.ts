@@ -14,7 +14,7 @@ function setupScreenshots(testInfo) {
     const filePath = path.join(dir, `${step}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(step, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   };
 }
 
@@ -23,7 +23,7 @@ test('Negative: Above 70 — Age restriction error displayed (TC-007)', async ({
 
   // 1️⃣ Go to Sandbox
   await page.goto(testData.urls.sandbox);
-  console.log('✅ Sandbox loaded');
+  console.log(' Sandbox loaded');
   await takeScreenshot(page, 'sandbox_loaded');
 
   // 2️⃣ Open navigation menu
@@ -65,14 +65,14 @@ await takeScreenshot(page, 'dob_filled');
   const signUpBtn = page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name });
   await expect(signUpBtn).toBeEnabled({ timeout: 5000 });
   await signUpBtn.click();
-  console.log('✅ Sign Up submitted');
+  console.log(' Sign Up submitted');
   await takeScreenshot(page, 'signup_submitted');
 
   // 9️⃣ Verify Age Error
 const ageError = page.locator(locators.errors.dobAbove70); 
 await ageError.waitFor({ state: 'visible', timeout: 7000 });
 const errorText = (await ageError.textContent())?.trim();
-console.log('❌ Over-age error displayed:', errorText);
+console.log(' Over-age error displayed:', errorText);
 expect(errorText?.toLowerCase()).toContain('maximum age limit is 70');
 await takeScreenshot(page, 'age_error');
 

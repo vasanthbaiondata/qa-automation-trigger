@@ -17,12 +17,12 @@ test('Positive: Identifies as a new user and shows Sign Up page (TC-INIT-003)', 
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // 1️⃣ Navigate to home page
   await page.goto(testData.baseURL);
-  console.log('✅ Redirected to home page');
+  console.log(' Redirected to home page');
   await takeScreenshot('step1_home_page');
 
   // 2️⃣ Open navigation menu
@@ -48,6 +48,6 @@ test('Positive: Identifies as a new user and shows Sign Up page (TC-INIT-003)', 
   // 6️⃣ Verify Sign Up page is visible
   const firstNameInput = page.locator(locators.signUpFirstName.css);
   await expect(firstNameInput).toBeVisible();
-  console.log('✅ Sign Up page visible');
+  console.log(' Sign Up page visible');
   await takeScreenshot('step6_sign_up_page');
 });

@@ -17,12 +17,12 @@ test('Negative: Invalid Email Format shows error (TC-INIT-002)', async ({ page }
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // 1️⃣ Navigate to home page
   await page.goto(testData.baseURL);
-  console.log('✅ Redirected to home page');
+  console.log(' Redirected to home page');
   await takeScreenshot('step1_home_page');
 
   // 2️⃣ Open navigation menu
@@ -37,7 +37,7 @@ test('Negative: Invalid Email Format shows error (TC-INIT-002)', async ({ page }
 
   // 4️⃣ Enter invalid email
   await page.getByRole(locators.emailInput.role, { name: locators.emailInput.name }).fill(testData.invalidEmail2);
-  console.log(`❌ Invalid email filled: ${testData.invalidEmail2}`);
+  console.log(` Invalid email filled: ${testData.invalidEmail2}`);
   await takeScreenshot('step4_fill_invalid_email');
 
   // 5️⃣ Click Continue button
@@ -48,6 +48,6 @@ test('Negative: Invalid Email Format shows error (TC-INIT-002)', async ({ page }
   // 6️⃣ Verify error message
   const errorMessage = page.getByText(testData.expectedError, { exact: false });
   await expect(errorMessage).toBeVisible();
-  console.log('✅ Error message displayed: Must be a valid email');
+  console.log(' Error message displayed: Must be a valid email');
   await takeScreenshot('step6_error_message');
 });

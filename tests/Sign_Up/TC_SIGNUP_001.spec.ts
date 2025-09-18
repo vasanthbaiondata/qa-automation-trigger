@@ -14,7 +14,7 @@ function setupScreenshots(testInfo) {
     const filePath = path.join(dir, `${step}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(step, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   };
 }
 
@@ -23,7 +23,7 @@ test('Positive : Sign Up page submission passes (TC-INIT-001)', async ({ page },
 
   // 1. Go to home/login page
   await page.goto(testData.urls.sandbox);
-  console.log('✅ Sandbox loaded');
+  console.log(' Sandbox loaded');
   await takeScreenshot(page, 'sandbox_loaded');
 
   // 2. Open navigation menu
@@ -65,6 +65,6 @@ await takeScreenshot(page, 'country_selected');
 
   // 9. Submit Sign Up
   await page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name }).first().click();
-  console.log('✅ Sign Up submitted');
+  console.log(' Sign Up submitted');
   await takeScreenshot(page, 'signup_submitted');
 });

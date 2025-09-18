@@ -16,12 +16,12 @@ test('Negative: Sign up without first name shows error (TC-SIGNUP-002)', async (
     const filePath = path.join(dir, `${step}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(step, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   };
 
   // 1️⃣ Go to Sandbox
   await page.goto(testData.urls.sandbox);
-  await screenshot('sandbox_loaded', '✅ Sandbox page loaded');
+  await screenshot('sandbox_loaded', ' Sandbox page loaded');
 
   // 2️⃣ Navigation menu & Sign In
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
@@ -47,12 +47,12 @@ test('Negative: Sign up without first name shows error (TC-SIGNUP-002)', async (
 
   // 5️⃣ Submit & verify error
   await page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name }).click();
-  await screenshot('form_submitted', '✅ Form submitted');
+  await screenshot('form_submitted', ' Form submitted');
 
   const firstNameError = page.locator(locators.errors.firstName);
   await expect(firstNameError).toBeVisible();
   await expect(firstNameError).toHaveText(/enter your first name/i);
-  await screenshot('firstName_error', '❌ First name validation error displayed');
+  await screenshot('firstName_error', ' First name validation error displayed');
 
   // Ensure form not submitted
   await expect(page).not.toHaveURL(/success/i);

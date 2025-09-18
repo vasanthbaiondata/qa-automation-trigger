@@ -19,12 +19,12 @@ test('Positive: Accepts valid email and moves to OTP screen (TC-INIT-001)', asyn
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // 1️⃣ Go to home/login page
   await page.goto(testData.baseURL);
-  console.log('✅ Redirected to home page');
+  console.log(' Redirected to home page');
   await takeScreenshot('step1_home_page');
 
   // 2️⃣ Open navigation menu
@@ -72,6 +72,6 @@ test('Positive: Accepts valid email and moves to OTP screen (TC-INIT-001)', asyn
   await expect(
     otpInput.or(page.getByText(/Enter verification code/i))
   ).toBeVisible({ timeout: 10000 });
-  console.log('✅ Redirected to OTP page & OTP input visible');
+  console.log(' Redirected to OTP page & OTP input visible');
   await takeScreenshot('step6_otp_screen');
 });

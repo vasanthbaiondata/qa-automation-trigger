@@ -23,12 +23,12 @@ test('Positive : Accepts validation and allows to access Wallet address page (TC
     const filePath = path.join(screenshotsDir, `${stepName}.png`);
     const shot = await page.screenshot({ path: filePath, fullPage: true });
     await testInfo.attach(stepName, { body: shot, contentType: 'image/png' });
-    console.log(`📸 Screenshot saved: ${filePath}`);
+    console.log(` Screenshot saved: ${filePath}`);
   }
 
   // Step 1: Go to sandbox
   await page.goto(testData.baseURLSandbox);
-  console.log('✅ Redirected to home page');
+  console.log(' Redirected to home page');
   await takeScreenshot('step1_home');
 
   // Step 2: Open navigation menu
@@ -70,11 +70,11 @@ test('Positive : Accepts validation and allows to access Wallet address page (TC
   for (let i = 0; i < 6; i++) {
     await otpInputs.nth(i).fill(digits[i]);
   }
-  console.log('✅ OTP filled');
+  console.log(' OTP filled');
   await takeScreenshot('step6_otp_filled');
 
   // Step 8: Verify navigation to Wallet page
   await expect(page).toHaveURL(testData.baseURLSandbox);
-  console.log('✅ Successfully navigated to Wallet page');
+  console.log(' Successfully navigated to Wallet page');
   await takeScreenshot('step7_wallet_page');
 });

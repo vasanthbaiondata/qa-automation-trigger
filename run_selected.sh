@@ -10,4 +10,4 @@ npx playwright test
 # Optional: show HTML report locally
 npx playwright show-report playwright-report
 
-echo "✅ All tests finished."
+echo " All tests finished."

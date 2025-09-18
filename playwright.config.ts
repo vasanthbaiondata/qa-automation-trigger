@@ -14,7 +14,7 @@ try {
     console.warn(`⚠️ No tests found for group "${testGroup}".`);
   }
 } catch (err) {
-  console.error('❌ Failed to load tests.env.json:', err);
+  console.error(' Failed to load tests.env.json:', err);
 }
 
 const fileName = process.env.TEST_FILE_NAME || 'test';

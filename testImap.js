@@ -9,6 +9,6 @@ const imap = new Imap({
   tlsOptions: { rejectUnauthorized: false }
 });
 
-imap.once('ready', () => console.log('✅ Connected!'));
+imap.once('ready', () => console.log(' Connected!'));
 imap.once('error', (err) => console.error(err));
 imap.connect();

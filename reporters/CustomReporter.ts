@@ -26,7 +26,7 @@ class CustomTestReporter implements Reporter {
     console.log(`${emoji} ${test.title} (${duration}ms)`);
     
     if (result.error) {
-      console.log(`❌ Error: ${result.error.message}`);
+      console.log(` Error: ${result.error.message}`);
     }
 
     this.results.push({
@@ -48,8 +48,8 @@ class CustomTestReporter implements Reporter {
     const skipped = this.results.filter(r => r.status === 'skipped').length;
 
     console.log(`\n📊 Test Results Summary:`);
-    console.log(`✅ Passed: ${passed}`);
-    console.log(`❌ Failed: ${failed}`);
+    console.log(` Passed: ${passed}`);
+    console.log(` Failed: ${failed}`);
     console.log(`⏭️ Skipped: ${skipped}`);
     console.log(`⏱️ Total Duration: ${duration}ms`);
     console.log(`🏁 Status: ${result.status.toUpperCase()}`);
@@ -60,8 +60,8 @@ class CustomTestReporter implements Reporter {
 
   private getStatusEmoji(status: string): string {
     const emojis: Record<string, string> = {
-      passed: '✅',
-      failed: '❌',
+      passed: '',
+      failed: '',
       timedOut: '⏱️',
       skipped: '⏭️'
     };
