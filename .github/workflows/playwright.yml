@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright CI + Deploy
 
 on:
   schedule:
@@ -9,29 +9,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  playwright-tests:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      # Case 1: Daily 4AM → run login tests
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      
+# Case 1: Daily 4AM → run login tests
       - name: Run login tests
         if: github.event_name == 'schedule'
         run: TEST_GROUP=login npx playwright test
 
-      # Case 2: Push to E2E → run E2E tests
+# Case 2: Push to E2E → run E2E tests
       - name: Run E2E tests
         if: github.event_name == 'push'
-        run: TEST_GROUP=E2E npx playwright test --headed
+        run: TEST_GROUP=E2E npx playwright test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: your-org/your-app-repo   # <- Vercel project repo
+          token: ${{ secrets.GH_PAT }}        # <- GitHub PAT with repo access
+      - run: npm ci
+      - run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
