@@ -19,30 +19,30 @@ test('Negative: Sign up without last name shows error (TC-SIGNUP-003)', async ({
     console.log(` Screenshot saved: ${filePath}`);
   };
 
-  // 1️⃣ Go to Sandbox
+  //  Go to Sandbox
   await page.goto(testData.urls.sandbox);
   await screenshot('sandbox_loaded', ' Sandbox page loaded');
 
-  // 2️⃣ Navigation menu & Sign In
+  //  Navigation menu & Sign In
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
-  await screenshot('nav_clicked', '📂 Navigation menu clicked');
+  await screenshot('nav_clicked', ' Navigation menu clicked');
 
   await page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name }).click();
-  await screenshot('signIn_clicked', '🔑 Sign In button clicked');
+  await screenshot('signIn_clicked', ' Sign In button clicked');
 
     const randomEmail = `testingsignin+${Date.now()}@gmail.com`;
     await page.getByRole(locators.fields.email.role, { name: locators.fields.email.name }).fill(randomEmail);
 
 
   await page.getByRole(locators.buttons.continue.role, { name: locators.buttons.continue.name }).click();
-  await screenshot('continue_clicked', '➡️ Continue clicked');
+  await screenshot('continue_clicked', ' Continue clicked');
 
   await page.locator(locators.fields.firstName).fill(testData.user.TC003.firstName);
   await page.locator(locators.fields.lastName).fill(testData.user.TC003.lastName); 
   await page.getByRole(locators.fields.dob.role, { name: locators.fields.dob.name }).fill(testData.user.TC003.dob);
   await page.getByLabel(locators.fields.country).selectOption({ label: testData.user.TC003.country });
 
-  // 5️⃣ Submit & verify error
+  //  Submit & verify error
   await page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name }).click();
   await screenshot('form_submitted', ' Form submitted');
 

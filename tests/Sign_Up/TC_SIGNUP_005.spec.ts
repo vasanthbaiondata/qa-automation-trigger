@@ -22,23 +22,23 @@ test('Negative: Sign up with missing country shows error (TC-SIGNUP-005)', async
   const data = testData.user.TC005; // Country missing
   const randomEmail = `testingsignin+${Date.now()}@gmail.com`;
 
-  // 1️⃣ Go to Sandbox
+  //  Go to Sandbox
   await page.goto(testData.urls.sandbox);
   await screenshot('sandbox_loaded', ' Sandbox page loaded');
 
-  // 2️⃣ Navigation menu & Sign In
+  //  Navigation menu & Sign In
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
-  await screenshot('nav_clicked', '📂 Navigation menu clicked');
+  await screenshot('nav_clicked', ' Navigation menu clicked');
 
   await page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name }).click();
-  await screenshot('signIn_clicked', '🔑 Sign In button clicked');
+  await screenshot('signIn_clicked', ' Sign In button clicked');
 
-  // 3️⃣ Fill Email & Continue
+  //  Fill Email & Continue
   await page.getByRole(locators.fields.email.role, { name: locators.fields.email.name }).fill(randomEmail);
   await page.getByRole(locators.buttons.continue.role, { name: locators.buttons.continue.name }).click();
-  await screenshot('continue_clicked', '➡️ Continue clicked');
+  await screenshot('continue_clicked', ' Continue clicked');
 
-  // 4️⃣ Fill Sign Up form (Country missing)
+  //  Fill Sign Up form (Country missing)
 await page.locator(locators.fields.firstName).fill(data.firstName);
 await page.locator(locators.fields.lastName).fill(data.lastName);
 await page.getByRole(locators.fields.dob.role, { name: locators.fields.dob.name }).fill(data.dob);
@@ -49,7 +49,7 @@ await page.getByRole(locators.fields.dob.role, { name: locators.fields.dob.name 
  await screenshot('form_filled', '🖊 Form filled with missing country');
 
 
-  // 5️⃣ Submit & verify error
+  //  Submit & verify error
   await page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name }).click();
   await screenshot('form_submitted', ' Form submitted');
 

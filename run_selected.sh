@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Running all Playwright tests..."
+echo " Running all Playwright tests..."
 
 set -e  # Exit if any command fails
 

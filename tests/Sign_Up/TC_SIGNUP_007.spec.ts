@@ -21,34 +21,34 @@ function setupScreenshots(testInfo) {
 test('Negative: Above 70 — Age restriction error displayed (TC-007)', async ({ page }, testInfo) => {
   const takeScreenshot = setupScreenshots(testInfo);
 
-  // 1️⃣ Go to Sandbox
+  //  Go to Sandbox
   await page.goto(testData.urls.sandbox);
   console.log(' Sandbox loaded');
   await takeScreenshot(page, 'sandbox_loaded');
 
-  // 2️⃣ Open navigation menu
+  //  Open navigation menu
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot(page, 'nav_clicked');
 
-  // 3️⃣ Click Sign In
+  //  Click Sign In
   await page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name }).click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot(page, 'signIn_clicked');
 
-  // 4️⃣ Fill Email & Continue
+  //  Fill Email & Continue
   const email = testData.user.TC007.testEmail;
   await page.getByRole(locators.fields.email.role, { name: locators.fields.email.name }).fill(email);
   await page.getByRole(locators.buttons.continue.role, { name: locators.buttons.continue.name }).click();
   await takeScreenshot(page, 'continue_clicked');
 
-  // 5️⃣ Fill Name
+  //  Fill Name
   await page.locator(locators.fields.firstName).fill(testData.user.TC007.firstName);
   await page.locator(locators.fields.lastName).fill(testData.user.TC007.lastName);
   console.log('🖊 First and last name filled');
   await takeScreenshot(page, 'name_filled');
 
- // 6️⃣ Fill DOB above 70 years old
+ //  Fill DOB above 70 years old
 const over70DOB = new Date();
 over70DOB.setFullYear(over70DOB.getFullYear() - 75); // 75 years old
 const dobString = over70DOB.toISOString().split('T')[0];

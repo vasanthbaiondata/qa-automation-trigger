@@ -20,32 +20,32 @@ test('Positive: Identifies as a new user and shows Sign Up page (TC-INIT-003)', 
     console.log(` Screenshot saved: ${filePath}`);
   }
 
-  // 1️⃣ Navigate to home page
+  //  Navigate to home page
   await page.goto(testData.baseURL);
   console.log(' Redirected to home page');
   await takeScreenshot('step1_home_page');
 
-  // 2️⃣ Open navigation menu
+  //  Open navigation menu
   await page.getByRole('navigation').getByRole('img').first().click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot('step2_nav_menu');
 
-  // 3️⃣ Click Sign In button
+  //  Click Sign In button
   await page.getByRole(locators.signInBtn.role, { name: locators.signInBtn.name }).click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot('step3_sign_in');
 
-  // 4️⃣ Enter new user email
+  //  Enter new user email
   await page.getByRole(locators.emailInput.role, { name: locators.emailInput.name }).fill(testData.newUserEmail);
-  console.log(`✉️ New user email filled: ${testData.newUserEmail}`);
+  console.log(` New user email filled: ${testData.newUserEmail}`);
   await takeScreenshot('step4_fill_new_user_email');
 
-  // 5️⃣ Click Continue button
+  //  Click Continue button
   await page.getByRole(locators.continueBtn.role, { name: locators.continueBtn.name }).click();
-  console.log('➡️ Continue button clicked');
+  console.log(' Continue button clicked');
   await takeScreenshot('step5_click_continue');
 
-  // 6️⃣ Verify Sign Up page is visible
+  //  Verify Sign Up page is visible
   const firstNameInput = page.locator(locators.signUpFirstName.css);
   await expect(firstNameInput).toBeVisible();
   console.log(' Sign Up page visible');

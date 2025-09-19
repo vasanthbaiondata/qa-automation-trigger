@@ -29,13 +29,13 @@ test('Positive : Sign Up page submission passes (TC-INIT-001)', async ({ page },
   // 2. Open navigation menu
   const navMenuIcon = page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first();
   await navMenuIcon.click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot(page, 'nav_clicked');
 
   // 3. Click Sign In button
   const signInBtn = page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name });
   await signInBtn.click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot(page, 'signIn_clicked');
 
   // 4. Fill random email

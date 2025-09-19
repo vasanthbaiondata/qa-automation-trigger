@@ -2,7 +2,7 @@ name: Playwright Tests
 
 on:
   schedule:
-    - cron: "30 22 * * *"   # 4:00 AM IST
+    - cron: "30 22 * * *"   
   push:
     branches:
       - E2E

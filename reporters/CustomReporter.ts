@@ -8,7 +8,7 @@ class CustomTestReporter implements Reporter {
 
   onBegin(config: FullConfig, suite: Suite) {
     this.startTime = Date.now();
-    console.log(`🚀 Starting test execution with ${suite.allTests().length} tests`);
+    console.log(` Starting test execution with ${suite.allTests().length} tests`);
     console.log(`📊 Parallel workers: ${config.workers}`);
     console.log(`🔄 Retries: ${config.projects[0]?.retries || 0}`);
   }

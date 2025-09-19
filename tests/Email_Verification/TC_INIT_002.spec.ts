@@ -20,32 +20,32 @@ test('Negative: Invalid Email Format shows error (TC-INIT-002)', async ({ page }
     console.log(` Screenshot saved: ${filePath}`);
   }
 
-  // 1️⃣ Navigate to home page
+  //  Navigate to home page
   await page.goto(testData.baseURL);
   console.log(' Redirected to home page');
   await takeScreenshot('step1_home_page');
 
-  // 2️⃣ Open navigation menu
+  //  Open navigation menu
   await page.getByRole('navigation').getByRole('img').first().click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot('step2_nav_menu');
 
-  // 3️⃣ Click Sign In button
+  //  Click Sign In button
   await page.getByRole(locators.signInBtn.role, { name: locators.signInBtn.name }).click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot('step3_sign_in');
 
-  // 4️⃣ Enter invalid email
+  //  Enter invalid email
   await page.getByRole(locators.emailInput.role, { name: locators.emailInput.name }).fill(testData.invalidEmail2);
   console.log(` Invalid email filled: ${testData.invalidEmail2}`);
   await takeScreenshot('step4_fill_invalid_email');
 
-  // 5️⃣ Click Continue button
+  //  Click Continue button
   await page.getByRole(locators.continueBtn.role, { name: locators.continueBtn.name }).click();
-  console.log('➡️ Continue button clicked');
+  console.log(' Continue button clicked');
   await takeScreenshot('step5_click_continue');
 
-  // 6️⃣ Verify error message
+  //  Verify error message
   const errorMessage = page.getByText(testData.expectedError, { exact: false });
   await expect(errorMessage).toBeVisible();
   console.log(' Error message displayed: Must be a valid email');

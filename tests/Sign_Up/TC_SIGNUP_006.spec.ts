@@ -23,34 +23,34 @@ function setupScreenshots(testInfo) {
 test('Negative: Under 18 — Age restriction error displayed (TC-006)', async ({ page }, testInfo) => {
   const takeScreenshot = setupScreenshots(testInfo);
 
-  // 1️⃣ Go to Sandbox
+  //  Go to Sandbox
   await page.goto(testData.urls.sandbox);
   console.log(' Sandbox loaded');
   await takeScreenshot(page, 'sandbox_loaded');
 
-  // 2️⃣ Open navigation menu
+  //  Open navigation menu
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot(page, 'nav_clicked');
 
-  // 3️⃣ Click Sign In
+  //  Click Sign In
   await page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name }).click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot(page, 'signIn_clicked');
 
-  // 4️⃣ Fill Email & Continue
+  //  Fill Email & Continue
   const randomEmail = `testingsignin+${Date.now()}@gmail.com`;
   await page.getByRole(locators.fields.email.role, { name: locators.fields.email.name }).fill(randomEmail);
   await page.getByRole(locators.buttons.continue.role, { name: locators.buttons.continue.name }).click();
-  await takeScreenshot(page, 'continue_clicked', '➡️ Continue clicked');
+  await takeScreenshot(page, 'continue_clicked', ' Continue clicked');
 
-  // 5️⃣ Fill Name
+  //  Fill Name
   await page.locator(locators.fields.firstName).fill(testData.user.TC006.firstName);
   await page.locator(locators.fields.lastName).fill(testData.user.TC006.lastName);
   console.log('🖊 First and last name filled');
   await takeScreenshot(page, 'name_filled');
 
-  // 6️⃣ Fill Underage DOB dynamically (10 years old)
+  //  Fill Underage DOB dynamically (10 years old)
   const under18DOB = new Date();
   under18DOB.setFullYear(under18DOB.getFullYear() - 10);
   const dobString = under18DOB.toISOString().split('T')[0];

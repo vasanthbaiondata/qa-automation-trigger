@@ -35,33 +35,33 @@ test('Positive : Accepts validation and allows to access Wallet address page (TC
   const navMenuIcon = page.locator(locators.navigationMenuIcon).first();
   await navMenuIcon.waitFor({ state: 'visible', timeout: 15000 });
   await navMenuIcon.click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot('step2_nav_menu');
 
   // Step 3: Click Sign In
   const signInBtn = page.locator(locators.signInButton);
   await signInBtn.waitFor({ state: 'visible', timeout: 5000 });
   await signInBtn.click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot('step3_sign_in');
 
   // Step 4: Fill email
   const emailInput = page.locator(locators.emailInput);
   await emailInput.waitFor({ state: 'visible', timeout: 8000 });
   await emailInput.fill(process.env.EMAIL_USER || '');
-  console.log('✉️ Email filled');
+  console.log(' Email filled');
   await takeScreenshot('step4_email_filled');
 
   // Step 5: Click Continue
   const continueBtn = page.locator(locators.continueButton);
   await continueBtn.click();
-  console.log('➡️ Continue button clicked');
+  console.log(' Continue button clicked');
   await takeScreenshot('step5_continue');
 
   // Step 6: Wait & get OTP
   await page.waitForTimeout(10000);
   const otp = await getLatestOtpFromEmail();
-  console.log('🔑 OTP received:', otp);
+  console.log(' OTP received:', otp);
 
   // Step 7: Fill OTP inputs
   const otpInputs = page.locator(locators.otpInputs);

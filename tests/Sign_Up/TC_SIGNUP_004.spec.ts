@@ -20,29 +20,29 @@ test('Negative: DOB is required — form not submitted (TC-SIGNUP-004)', async (
   const data = testData.user.TC004; // DOB missing
   const randomEmail = `testingsignin+${Date.now()}@gmail.com`;
 
-  // 1️⃣ Go to Sandbox
+  //  Go to Sandbox
   console.log('🌐 Navigating to Sandbox...');
   await page.goto(testData.urls.sandbox);
   await screenshot('sandbox_loaded');
   console.log(' Sandbox page loaded');
 
-  // 2️⃣ Navigation menu & Sign In
-  console.log('📂 Opening navigation menu...');
+  //  Navigation menu & Sign In
+  console.log(' Opening navigation menu...');
   await page.getByRole(locators.navigation.menuIcon.role).getByRole('img').first().click();
-  console.log('🔑 Clicking Sign In button...');
+  console.log(' Clicking Sign In button...');
   await page.getByRole(locators.buttons.signIn.role, { name: locators.buttons.signIn.name }).click();
   await screenshot('signIn_clicked');
   console.log(' Sign In page opened');
 
-  // 3️⃣ Fill Email & Continue
-  console.log(`✉️ Filling email: ${randomEmail}`);
+  //  Fill Email & Continue
+  console.log(` Filling email: ${randomEmail}`);
   await page.getByRole(locators.fields.email.role, { name: locators.fields.email.name }).fill(randomEmail);
-  console.log('➡️ Clicking Continue...');
+  console.log(' Clicking Continue...');
   await page.getByRole(locators.buttons.continue.role, { name: locators.buttons.continue.name }).click();
   await screenshot('email_continue_clicked');
   console.log(' Email submitted');
 
-  // 4️⃣ Fill Sign Up form (DOB missing)
+  //  Fill Sign Up form (DOB missing)
   console.log('📝 Filling Sign Up form (DOB intentionally missing)...');
   await page.locator(locators.fields.firstName).fill(data.firstName);
   await page.locator(locators.fields.lastName).fill(data.lastName);
@@ -50,8 +50,8 @@ test('Negative: DOB is required — form not submitted (TC-SIGNUP-004)', async (
   await screenshot('form_filled');
   console.log(' Form filled (without DOB)');
 
-  // 5️⃣ Submit & verify error
-  console.log('🚀 Submitting form...');
+  //  Submit & verify error
+  console.log(' Submitting form...');
   await page.getByRole(locators.buttons.signUp.role, { name: locators.buttons.signUp.name }).click();
   await screenshot('form_submitted');
   console.log(' Form submitted');

@@ -23,26 +23,26 @@ test('Negative : Rejects incorrect OTP and shows error message (TC-OTP-002)', as
     console.log(` Screenshot saved: ${filePath}`);
   }
 
-  // 1️⃣ Go to Sandbox/Login page
+  //  Go to Sandbox/Login page
   await page.goto(testData.baseURLSandbox);
   console.log(' Redirected to home page');
   await takeScreenshot('step1_home');
 
-  // 2️⃣ Open navigation menu
+  //  Open navigation menu
   const navMenuIcon = page.locator(locators.navigationMenuIcon).first();
   await navMenuIcon.waitFor({ state: 'visible', timeout: 15000 });
   await navMenuIcon.click();
-  console.log('📂 Navigation menu clicked');
+  console.log(' Navigation menu clicked');
   await takeScreenshot('step2_nav_menu');
 
-  // 3️⃣ Click Sign In button
+  //  Click Sign In button
   const signInBtn = page.locator(locators.signInButton);
   await signInBtn.waitFor({ state: 'visible', timeout: 5000 });
   await signInBtn.click();
-  console.log('🔑 Sign In clicked');
+  console.log(' Sign In clicked');
   await takeScreenshot('step3_sign_in');
 
-  // 4️⃣ Fill Email textbox (from testData)
+  //  Fill Email textbox (from testData)
   const emailInput = page.locator(locators.emailInput);
   await emailInput.waitFor({ state: 'visible', timeout: 8000 });
 
@@ -50,16 +50,16 @@ test('Negative : Rejects incorrect OTP and shows error message (TC-OTP-002)', as
   if (!email) throw new Error('email1 not defined in testData');
 
   await emailInput.fill(email);
-  console.log(`✉️ Email filled: ${email}`);
+  console.log(` Email filled: ${email}`);
   await takeScreenshot('step4_email_filled');
 
-  // 5️⃣ Click Continue button
+  //  Click Continue button
   const continueBtn = page.locator(locators.continueButton);
   await continueBtn.click();
-  console.log('➡️ Continue button clicked');
+  console.log(' Continue button clicked');
   await takeScreenshot('step5_continue');
 
-  // 6️⃣ Wait a bit for OTP page to load
+  //  Wait a bit for OTP page to load
   await page.waitForTimeout(5000);
   await takeScreenshot('step6_otp_page_loaded');
 
