@@ -1,8 +1,6 @@
 coverage/
 node_modules/
-playwright-report/
 report/
-reports/
 reviews/
 test-results/
 backup files/
