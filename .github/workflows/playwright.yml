@@ -1,0 +1,37 @@
+name: Playwright Tests
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # 4:00 AM IST
+  push:
+    branches:
+      - E2E
+  workflow_dispatch:
+
+jobs:
+  playwright-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # Case 1: Daily 4AM → run login tests
+      - name: Run login tests
+        if: github.event_name == 'schedule'
+        run: TEST_GROUP=login npx playwright test
+
+      # Case 2: Push to E2E → run E2E tests
+      - name: Run E2E tests
+        if: github.event_name == 'push'
+        run: TEST_GROUP=E2E npx playwright test --headed
