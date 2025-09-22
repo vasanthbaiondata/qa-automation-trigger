@@ -1,4 +1,15 @@
 {
+  "name": "email_pass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readEmails.js",
+  "type": "commonjs",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "posttest:e2e": "cp -r playwright-report public/playwright-report || true",
+    "vercel-build": "npx playwright install",
+    "coverage": "c8 --reporter=html --reporter=text npm run test:e2e"
+  },
   "dependencies": {
     "dotenv": "^17.2.1",
     "imap": "^0.8.19",
@@ -7,20 +18,6 @@
     "nodemailer": "^7.0.5",
     "playwright": "^1.54.2"
   },
-  "name": "email_pass",
-  "version": "1.0.0",
-  "description": "",
-  "main": "readEmails.js",
-  "scripts": {
-    "test": "npx playwright test",
-    "posttest": "cp -r playwright-report public/playwright-report || true",
-    "vercel-build": "npx playwright install",
-    "coverage": "c8 --reporter=html --reporter=text npm run test"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.55.0",
     "@types/imap": "^0.8.42",
@@ -29,5 +26,8 @@
     "c8": "^10.1.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
