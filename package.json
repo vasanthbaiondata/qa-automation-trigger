@@ -14,7 +14,7 @@
   "scripts": {
     "test": "npx playwright test",
     "posttest": "cp -r playwright-report public/playwright-report",
-    "vercel-build": "npx playwright install && next build",
+    "vercel-build": "npx playwright install",
     "coverage": "c8 --reporter=html --reporter=text npm run test"
   },
   "keywords": [],
