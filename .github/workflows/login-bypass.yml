@@ -1,9 +1,13 @@
 name: Daily Login Bypass (10:00 IST)
 
 on:
+on:
+  push:
+    branches:
+      - playwright
   schedule:
     # Runs at 04:30 UTC every day -> that's 10:00 IST
-    - cron: '9 4 * * *'
+    - cron: '12 4 * * *'
   workflow_dispatch: # allows manual run
 
 jobs:
