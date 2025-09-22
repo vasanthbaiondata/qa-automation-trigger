@@ -105,19 +105,20 @@ for (const args of locators.sell_args) {
     await page.waitForTimeout(4000);
 
     // Step 9: View Order (wait until attached & visible)
-    const view_order = page.getByRole(locators.view_order.role, { name: locators.view_order.name });
-    await view_order.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(500); // smooth scroll
-    await view_order.click();
-    console.log(' Step 8: View order clicked');
-    await takeScreenshot('step8_view_order');
-
-    // Step 10: Order Details (wait until attached & visible)
-    const orderDetailsBtn = page.getByRole(locators.orderDetailsButton.role, { name: locators.orderDetailsButton.name });
-    await orderDetailsBtn.waitFor({ state: 'visible', timeout: 15000 });
-    await orderDetailsBtn.scrollIntoViewIfNeeded();
-    await orderDetailsBtn.click();
-    console.log('Step 9: Order Details clicked');
-    await takeScreenshot('step9_order_details');
+        // Step 8: View Order (scroll into view first)
+        const view_order = page.getByRole(locators.view_order.role, { name: locators.view_order.name });
+        await view_order.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(500); // smooth scroll
+        await view_order.click();
+        console.log(' Step 8: View order clicked');
+        await takeScreenshot('step8_view_order');
+    
+        // Step 9: Order Details (scroll into view first)
+        const orderDetailsBtn = page.getByRole(locators.orderDetailsButton.role, { name: locators.orderDetailsButton.name });
+        await orderDetailsBtn.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(500); // smooth scroll
+        await orderDetailsBtn.click();
+        console.log(' Step 9: Order Details clicked');
+        await takeScreenshot('step9_order_details');
   });
 }
