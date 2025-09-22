@@ -112,7 +112,7 @@ for (const args of locators.sell_args) {
     console.log(' Step 8: View order clicked');
     await takeScreenshot('step8_view_order');
     
-        // Step 9: Order Details (scroll into view first)
+        // Step 10: Order Details (scroll into view first)
     const orderDetailsBtn = page.getByRole(locators.orderDetailsButton.role, { name: locators.orderDetailsButton.name });
     await orderDetailsBtn.scrollIntoViewIfNeeded();
     await page.waitForTimeout(500); // smooth scroll
