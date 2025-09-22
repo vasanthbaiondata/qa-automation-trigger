@@ -26,9 +26,9 @@ jobs:
         run: npm ci
 
       # 4. Run Playwright E2E tests and generate HTML reportTEST_GROUP=E2E npx playwright test
-      - name: Run E2E Playwright tests
+      - name: Run Sell_E2E Playwright tests
         run: |
-          TEST_GROUP=E2E npx playwright install
+          TEST_GROUP=Sell_E2E npx playwright install
           TEST_GROUP=Sell_E2E npx playwright test 
 
       # 5. Deploy full project to Vercel

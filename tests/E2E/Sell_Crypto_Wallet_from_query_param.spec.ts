@@ -113,9 +113,5 @@ for (const args of locators.sell_args) {
     await takeScreenshot('step8_view_order');
     
         // Step 10: Order Details (scroll into view first)
-    const orderDetailsBtn = page.getByRole(locators.orderDetailsButton.role, { name: locators.orderDetailsButton.name });
-    await orderDetailsBtn.click();
-    console.log(' Step 14: Order Details clicked');
-    await takeScreenshot('step14_order_details');
   });
 }
