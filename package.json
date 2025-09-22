@@ -13,7 +13,7 @@
   "main": "readEmails.js",
   "scripts": {
     "test": "npx playwright test",
-    "posttest": "cp -r playwright-report public/playwright-report",
+    "posttest": "cp -r playwright-report public/playwright-report || true",
     "vercel-build": "npx playwright install",
     "coverage": "c8 --reporter=html --reporter=text npm run test"
   },
