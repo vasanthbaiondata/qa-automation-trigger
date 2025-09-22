@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Run Playwright E2E tests and generate HTML report
+      # 4. Run Playwright E2E tests and generate HTML reportTEST_GROUP=E2E npx playwright test
       - name: Run E2E Playwright tests
         run: |
           TEST_GROUP=E2E npx playwright install
