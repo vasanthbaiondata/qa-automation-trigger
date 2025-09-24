@@ -1,40 +1,17 @@
-name: Playwright E2E Tests & Deploy Project + Report
+name: Notify ramp-widget
 
 on:
   push:
     branches:
-      - playwright
-  workflow_dispatch:
+      - qa
 
 jobs:
-  e2e-tests:
+  notify-ramp-widget:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checkout the repository
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      # 2. Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Send repository dispatch
+        uses: peter-evans/repository-dispatch@v2
         with:
-          node-version: 18
-
-      # 3. Install dependencies
-      - name: Install dependencies
-        run: npm ci
-
-      # 4. Run Playwright E2E tests and generate HTML reportTEST_GROUP=E2E npx playwright test
-      - name: Run E2E Playwright tests
-        run: |
-          npx playwright install
-          TEST_GROUP=E2E npx playwright test 
-
-      # 5. Deploy full project to Vercel
-      - name: Deploy full project to Vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: .
-          prod: true
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: transfi-ramp-widget
+          event-type: submodule-updated
