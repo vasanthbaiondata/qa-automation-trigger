@@ -3,7 +3,7 @@ name: Notify ramp-widget
 on:
   push:
     branches:
-      - qa
+      - playwright-integration
 
 jobs:
   notify-ramp-widget:
