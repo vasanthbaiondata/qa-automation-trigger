@@ -15,7 +15,4 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} 
           repository: Transfi/transfi-ramp-widget  
           event-type: submodule-updated            
-          client-payload: |
-            {
-              "ref": "playwright-integration"      
-            }
+          client-payload: '{"ref": "playwright-integration"}'
