@@ -12,7 +12,7 @@ jobs:
       - name: Send repository dispatch to ramp-widget
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} 
-          repository: Transfi/transfi-ramp-widget  
-          event-type: submodule-updated            
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: Transfi/transfi-ramp-widget
+          event-type: submodule-updated
           client-payload: '{"ref": "playwright-integration"}'
