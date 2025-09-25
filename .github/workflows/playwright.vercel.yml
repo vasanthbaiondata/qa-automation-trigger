@@ -3,7 +3,7 @@ name: Notify ramp-widget
 on:
   push:
     branches:
-      - playwright-integration
+      - playwright
 
 jobs:
   notify-ramp-widget:
@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: transfi-ramp-widget
+          repository: Trans-Fi/transfi-ramp-widget
           event-type: submodule-updated
