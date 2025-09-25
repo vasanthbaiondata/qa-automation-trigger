@@ -3,7 +3,7 @@ name: Notify ramp-widget
 on:
   push:
     branches:
-      - playwright  
+      - playwright  # When you push to 'playwright' branch in QA repo
 
 jobs:
   notify-ramp-widget:
@@ -12,7 +12,7 @@ jobs:
       - name: Send repository dispatch to ramp-widget
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: Transfi/transfi-ramp-widget
-          event-type: submodule-updated
-          client-payload: '{"ref": "playwright-integration"}'
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}   # PAT with repo access
+          repository: Transfi/transfi-ramp-widget       # Target repo
+          event-type: submodule-updated                 # Event name
+          client-payload: '{"ref": "playwright-integration"}'  # Branch to run in ramp-widget
