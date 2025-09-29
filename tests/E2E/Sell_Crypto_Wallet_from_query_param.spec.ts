@@ -98,13 +98,14 @@ for (const args of locators.sell_args) {
     await takeScreenshot('step6_continue');
 
     // Step 8: Confirm Order
+    await page.waitForTimeout(5000);
     let confirm_order = page.getByRole(locators.confirm_order.role, { name: locators.confirm_order.name });
     await confirm_order.click();
     console.log('Step 7: Confirm Order clicked');
     await takeScreenshot('step7_confirm_order');
 
     // Step 9: View Order (wait until attached & visible)
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(8000);
     const view_order = page.getByRole(locators.view_order.role, { name: locators.view_order.name });
     await view_order.scrollIntoViewIfNeeded();
     await page.waitForTimeout(500); // smooth scroll

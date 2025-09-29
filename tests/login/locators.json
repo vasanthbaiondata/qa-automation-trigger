@@ -1,0 +1,31 @@
+{
+  "navMenuIcon": {
+    "role": "navigation",
+    "target": "img"
+  },
+  "signInBtn": {
+    "role": "button",
+    "name": "Sign In"
+  },
+  "emailInput": {
+    "role": "textbox",
+    "name": "Email"
+  },
+  "continueBtn": {
+    "role": "button",
+    "name": "Continue"
+  },
+  "errorMsg": {
+    "text": "Please enter a valid email"
+  },
+  "otpInput": {
+    "role": "textbox",
+    "name": "Enter OTP"
+  },
+  "signUpFirstName": {
+    "css": "input[placeholder='Enter your first name here']"
+  },
+  "postLoginCheck": {
+    "text": "My Account"
+  }
+}

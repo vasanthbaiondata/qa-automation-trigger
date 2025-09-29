@@ -36,8 +36,8 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'Firefox',
-      use: { browserName: 'firefox', headless: true },
+      name: 'crohimunu',
+      use: { browserName: 'chromium', headless: true },
     }
   ],
   reporter: [
