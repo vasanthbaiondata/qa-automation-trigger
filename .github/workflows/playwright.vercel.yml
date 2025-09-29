@@ -1,18 +1,17 @@
-name: Notify ramp-widget
+name: Notify Repo 2
 
 on:
   push:
     branches:
-      - playwright  # When you push to 'playwright' branch in QA repo
+      - playwright   # or any branch you want
 
 jobs:
-  notify-ramp-widget:
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send repository dispatch to ramp-widget
+      - name: Send repository dispatch to Repo 2
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}   # PAT with repo access
-          repository: Transfi/transfi-ramp-widget       # Target repo
-          event-type: submodule-updated                 # Event name
-          client-payload: '{"ref": "playwright-integration"}'  # Branch to run in ramp-widget
+          repository: Transfi/transfi-qa-automation-widget
+          event-type: trigger-from-ramp
