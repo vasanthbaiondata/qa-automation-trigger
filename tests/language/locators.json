@@ -1,0 +1,12 @@
+{
+  "navMenu": [
+    { "role": "navigation", "target": "img" }
+  ],
+  "languages": [
+    { "name": "English", "dropdownText": "Language" },
+    { "name": "中国-China", "dropdownText": "Language" },
+    { "name": "Bahasa-Indonesia", "dropdownText": "语言" },
+    { "name": "Tiếng Việt-Vietnam", "dropdownText": "Bahasa"},
+    { "name": "แบบไทย-Thailand", "dropdownText" : "Ngôn ngữ"}
+  ]
+}
