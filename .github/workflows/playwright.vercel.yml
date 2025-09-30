@@ -14,7 +14,5 @@ jobs:
         with:
           # PAT with repo + workflow scope
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          # Target repository (replace with correct owner/repo)
           repository: vasanthbaiondata/Transfi_App
-          # The event type your workflow in Transfi_App listens for
           event-type: submodule-updated
