@@ -1,20 +1,20 @@
-name: Trigger Transfi App Workflow
+name: Notify Transfi App
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
-  trigger:
+  notify-transfi-app:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Transfi App Workflows
-        run: |
-          curl -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/vasanthbaiondata/Transfi_App/dispatches \
-            -d '{"event_type": "trigger-playwright"}'
+      - name: Send repository dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          # PAT with repo + workflow scope
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          # Target repository (replace with correct owner/repo)
+          repository: vasanthbaiondata/Transfi_App
+          # The event type your workflow in Transfi_App listens for
+          event-type: submodule-updated
