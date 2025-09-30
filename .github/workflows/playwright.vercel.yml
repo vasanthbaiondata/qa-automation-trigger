@@ -1,17 +1,20 @@
-name: Notify Repo 2
+name: Trigger QA Automation Widget
 
 on:
-  push:
-    branches:
-      - playwright   # or any branch you want
+  workflow_dispatch: # manually trigger this workflow
 
 jobs:
-  notify:
+  trigger-other-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Send repository dispatch to Repo 2
+      - name: Trigger Transfi QA Automation Widget
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}   # PAT with repo access
+          token: ${{ secrets.Personal Access Token }}   # your PAT
           repository: Transfi/transfi-qa-automation-widget
           event-type: trigger-from-ramp
+          client-payload: |
+            {
+              "source": "ramp-workflow",
+              "triggered_by": "main-workflow"
+            }
