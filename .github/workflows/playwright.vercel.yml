@@ -10,7 +10,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Transfi App Workflow
+      - name: Trigger Transfi App Workflows
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github+json" \
