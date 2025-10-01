@@ -1,6 +1,16 @@
 {
   "cookies": [
     {
+      "name": "_GRECAPTCHA",
+      "value": "09AG7bzvGWivDPPGbGeNzG26QItjHjWH-HBUJnpXMtm8HZ1L_UhmRzGDIYaOh_DWkpm5e0QVAcJpy-NALIiJNOKro",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1774855035.17899,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
       "name": "vercel-experiment-uuid",
       "value": "QQoUEMm9MjSnuas2GbV99",
       "domain": "vercel.live",
@@ -16,12 +26,16 @@
       "origin": "https://sandbox-buy.transfi.com",
       "localStorage": [
         {
-          "name": "userData",
-          "value": "{\"country\":\"IN\"}"
+          "name": "_grecaptcha",
+          "value": "09AG7bzvHZ3kxjfg2YtJC1yueuQfhbUsmfUlcrwaDSc5ITbZtlqvi0h8fGKEHEuGegCtpDMoDHmFmP2CXR1gWCNvUaF3xHzP-l5j3V29MDa6offKELG_PpVSheIdeHD_GH"
         },
         {
           "name": "auth-tokens-production",
-          "value": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTkxNDYxMDksImV4cCI6MTc1OTIzMjUwOX0.J3gLjXl9Za5aCBXC_mPeTyi_PUpvW9syRsStXiSNPRg\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTkxNDYxMDksImV4cCI6MTc1OTIzMjUwOX0.TLMPhdb_VkfKe0oThxKDzo4JPB9-C5wvs1PTGG97xTA\"}"
+          "value": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTkzMDMwMzAsImV4cCI6MTc1OTM4OTQzMH0._0P3LrX8O--Cl_yzBBMIIPsGrrlersX-d35AviXq2Zw\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJVWC0yNTA4MTgxNjExNDk4MTEiLCJfaWQiOiI2OGEzMTg4NTE3MWM3YTA3NjJhMmU4ZWUiLCJpYXQiOjE3NTkzMDMwMzAsImV4cCI6MTc1OTM4OTQzMH0.rC9wasKM0ueDcArmNMCiczd3vAw1kYd-o_B-mvlTUzw\"}"
+        },
+        {
+          "name": "userData",
+          "value": "{\"country\":\"IN\"}"
         }
       ]
     },
@@ -29,12 +43,25 @@
       "origin": "https://vercel.live",
       "localStorage": [
         {
-          "name": "vid-https://sandbox-buy.transfi.com",
-          "value": "\"17556021387590.1507497552621484\""
-        },
-        {
           "name": "vercel-toolbar-experiment-uuid-https://sandbox-buy.transfi.com",
           "value": "\"QQoUEMm9MjSnuas2GbV99\""
+        },
+        {
+          "name": "vid-https://sandbox-buy.transfi.com",
+          "value": "\"17556021387590.1507497552621484\""
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "ZHA0bnl2Z2twZDBx"
+        },
+        {
+          "name": "rc::f",
+          "value": "0aAGmBFisk3gbqOESf5uuxeBSPdZ2KkJVkcy8irsupFedXjKGIADVVmw6bNIIj8n4fvOFOFos"
         }
       ]
     }
